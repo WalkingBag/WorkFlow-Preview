@@ -9,8 +9,9 @@ and open the template in the editor.
 */
 
 body{
+    margin: 0; 
     height: 100%;
-    margin: 0;
+    overflow: hidden;
 }
 
 .notes{
@@ -27,6 +28,8 @@ body{
     padding: 1em;
     width: 350px;
     height: 100vh;
+    border: solid 1px ;
+    
 }
 
 .buttonAdd{
@@ -82,7 +85,7 @@ body{
     margin-top: 1em;
     resize: none;
     height: 80vh;
-    width: 68vw;
+    width: 100%;
     
 }
 
