@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Preview of Notetaking</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/template.css">
+    </head>
+    <body>
+        <div class="notes" id="app">
+            <div class="noteSidebar">
+                <button class="buttonAdd" type="button">Add note!</button>
+                <div class="noteList">
+                    <div class="noteObject">
+                        <div class="noteSmall-title">What did I learn today.</div>
+                        <div class="noteSmall-body">Something I don't remember.</div>
+                        <div class="noteSmall-timeStamp">September 13th 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="noteView">
+                <input type="text" name="noteTitle" class="noteTitle" value="" placeholder="Enter a title..."/>
+                <br/>
+                <form action="noteInput" method="post">
+                    <textarea name="myNote" class="noteInput" placeholder="Lorem ipsum dol..."></textarea>
+                </form> 
+            </div>
+        </div>
+    </body>
+</html>
