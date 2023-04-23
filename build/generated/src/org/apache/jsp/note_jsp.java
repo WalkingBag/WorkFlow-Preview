@@ -73,9 +73,9 @@ public final class note_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <h1>Note!</h1>\n");
       out.write("        <!--Later add servlet.-->\n");
       out.write("        <table border=\"1\">\n");
-      out.write("            <tr><th>ID</th>\n");
-      out.write("                <th>First Name</th>\n");
-      out.write("                <th>Last Name</th>\n");
+      out.write("            <tr><th>title</th>\n");
+      out.write("                <th>info</th>\n");
+      out.write("                <th>timestamp</th>\n");
       out.write("            </tr>\n");
       out.write("            ");
       if (_jspx_meth_c_set_0(_jspx_page_context))

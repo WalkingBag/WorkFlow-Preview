@@ -29,10 +29,9 @@ public class noteDAO {
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null;
-        
 
-        String sql = "select id, title, noteInfo, content, timestamp "
-                + "from note";
+        String sql = "SELECT id, title, noteInfo, content, timestamp "
+                + "FROM note";
 
         try {
             con = DBUtils.getConnection();
@@ -41,13 +40,13 @@ public class noteDAO {
 
                 stm = con.prepareStatement(sql);
                 rs = stm.executeQuery();
-                while (rs.next()){
+                while (rs.next()) {
                     int id = rs.getInt("id");
                     String title = rs.getString("title");
                     String noteInfo = rs.getString("noteInfo");
                     String content = rs.getString("content");
                     Date timestamp = rs.getDate("timestamp");
-                    
+
                     noteDTO note = new noteDTO(id, title, noteInfo, content, timestamp);
                     list.add(note);
                 }
