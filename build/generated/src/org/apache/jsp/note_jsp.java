@@ -9,7 +9,6 @@ import java.util.List;
 public final class note_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
- List<noteDTO> list;
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
@@ -59,25 +58,26 @@ public final class note_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <body>\n");
       out.write("        <h1>Note!</h1>\n");
       out.write("        <!--Later add servlet.-->\n");
-      out.write("        ");
-      out.write("\n");
-      out.write("        ");
-
-            list = (List<noteDTO>) request.getAttribute("list");
-            for (noteDTO note : list) {
-                //I need to map my controller named "note" inside web.XML;
-                out.print("<a href=note?action=view&id=" + note.getId() + ">"
-                        + "<div class='noteList'>"
-                        + "<div class='noteObject'>"
-                        + "<div class='noteSmall-title'>" + note.getTitle() + "</div>"
-                        + "<div class='noteSmall-body'>" + note.getNoteInfo() + "</div>"
-                        + "<div class='noteSmall-timeStamp'>" + note.getTimestamp() + "</div>"
-                        + "</div>" //noteObj
-                        + "</div>");//noteList
-            }
-
-        
-      out.write("\n");
+      out.write("            <c:set var= \"list\" value=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.list}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"></c:set>\n");
+      out.write("            <c:forEach var=\"note\" items=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${list}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\">\n");
+      out.write("                    <tbody>\n");
+      out.write("                        <tr>\n");
+      out.write("                            <td>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${note.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</td>\n");
+      out.write("                            <td>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${note.noteInfo}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</td>\n");
+      out.write("                            <td>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${note.timestamp}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</td>\n");
+      out.write("                        </tr>\n");
+      out.write("                    </tbody>\n");
+      out.write("            </c:forEach>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

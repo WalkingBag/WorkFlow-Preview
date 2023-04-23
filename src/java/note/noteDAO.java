@@ -31,8 +31,8 @@ public class noteDAO {
         ResultSet rs = null;
         
 
-        String sql = "SELECT id, title, noteInfo, content, timestamp"
-                + "FROM note";
+        String sql = "select id, title, noteInfo, content, timestamp "
+                + "from note";
 
         try {
             con = DBUtils.getConnection();

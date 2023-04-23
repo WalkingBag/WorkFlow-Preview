@@ -17,21 +17,15 @@
     <body>
         <h1>Note!</h1>
         <!--Later add servlet.-->
-        <%! List<noteDTO> list;%>
-        <%
-            list = (List<noteDTO>) request.getAttribute("list");
-            for (noteDTO note : list) {
-                //I need to map my controller named "note" inside web.XML;
-                out.print("<a href=note?action=view&id=" + note.getId() + ">"
-                        + "<div class='noteList'>"
-                        + "<div class='noteObject'>"
-                        + "<div class='noteSmall-title'>" + note.getTitle() + "</div>"
-                        + "<div class='noteSmall-body'>" + note.getNoteInfo() + "</div>"
-                        + "<div class='noteSmall-timeStamp'>" + note.getTimestamp() + "</div>"
-                        + "</div>" //noteObj
-                        + "</div>");//noteList
-            }
-
-        %>
+            <c:set var= "list" value="${requestScope.list}"></c:set>
+            <c:forEach var="note" items="${list}">
+                    <tbody>
+                        <tr>
+                            <td>${note.title}</td>
+                            <td>${note.noteInfo}</td>
+                            <td>${note.timestamp}</td>
+                        </tr>
+                    </tbody>
+            </c:forEach>
     </body>
 </html>
